@@ -3,6 +3,6 @@
 
 int main() {
 	Game game;
-	//game.Run();
+	game.Run();
 	String s1 = "";
 }
