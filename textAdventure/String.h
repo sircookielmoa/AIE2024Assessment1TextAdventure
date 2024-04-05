@@ -1,4 +1,5 @@
 #pragma once
+#include <iosfwd>
 
 class String
 {
@@ -54,3 +55,5 @@ private:
 * Put your internal data structures and members here
 */
 };
+
+std::ostream& operator << (std::ostream&, const String&);

@@ -5,7 +5,7 @@ class Room
 {
 public:
 	Room();
-	Room(String name, String Description, Item* item);
+	Room(String name, String description, Item* item);
 	~Room();
 
 	void Description() const;

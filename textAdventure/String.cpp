@@ -289,3 +289,9 @@ const char& String::operator[](size_t _index) const
 {
 	return str[_index];
 }
+
+std::ostream& operator<<(std::ostream& o, const String& s)
+{
+	o << s.CStr();
+	return o;
+}
