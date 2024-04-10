@@ -13,7 +13,7 @@ Player::~Player()
 
 bool Player::FindSpell(String& spell)
 {
-	return false;
+	return true;
 }
 
 Spell* Player::CastSpell(String& spell)
@@ -28,10 +28,10 @@ std::vector<Spell*> Player::GetSpellList()
 
 void Player::SpellList()
 {
-	for (int i = 0; i < spellList; i++)
+	/*for (int i = 0; i < spellList; i++)
 	{
 		std::cout << "\t\t" << spellList[i]->Getname() << "\n";
-	}
+	}*/
 }
 
 void Player::AddSpell(Spell* spell)
