@@ -1,5 +1,7 @@
 #pragma once
 #include "String.h"
+#include "Misc.h"
+
 class Item
 {
 public:

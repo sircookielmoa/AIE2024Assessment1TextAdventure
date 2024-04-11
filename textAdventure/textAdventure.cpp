@@ -1,9 +1,9 @@
 #include "Room.h"
-
+#include "Item.h"
 int main() {
-	ThroneRoom room1;
-	room1.Description();
-	room1.GetName();
+	//SmallBoy hayden;
+	//hayden.Description();
+	//hayden.GetName();
 
 	//Stick stick1;
 	//stick1.Description();
@@ -14,4 +14,24 @@ int main() {
 	//Hand hand1;
 	//hand1.Description();
 	////hand1.GetName();
+	// 
+	
+	String PlayerInput;
+	bool gamestate = true;
+	while (gamestate)
+	{
+		Stick stick1;
+		stick1.Description();
+		PlayerInput.ReadFromConsole().ToLower();
+		if (PlayerInput == "use")
+		{
+
+			stick1.Use();
+		}
+
+	}
+	
+
+
+	//Game textAdventure = new Game;
 	} 

@@ -29,6 +29,7 @@ String Item::GetName()
 Stick::Stick() {
 	_name = "\n\t\t[Stick]";
 	_description = "\n\t\tits sticky";
+	
 }
 
 void Stick::Description() const
@@ -39,6 +40,7 @@ void Stick::Description() const
 
 void Stick::Use()
 {
+	std::cout << "\n\t\tyou throw the stick" << std::endl;
 }
 
 String Stick::GetName()
@@ -50,7 +52,7 @@ String Stick::GetName()
 SmallBoy::SmallBoy()
 {
 	_name = "\n\t\t[Small boy]";
-	_description = "\n\t\tA small boy. He thinks his name is Hayden.";
+	_description = "\n\t\tA small boy, without a right hand. He thinks his name is Hayden.";
 }
 
 void SmallBoy::Description() const
@@ -72,7 +74,7 @@ String SmallBoy::GetName()
 Hand::Hand()
 {
 	_name = "\n\t\t[Hand]";
-	_description = "\n\t\t??????????????\n\t\t??????????????\n\t\t??????????????";
+	_description = "A hand(?)."
 }
 
 void Hand::Description() const
