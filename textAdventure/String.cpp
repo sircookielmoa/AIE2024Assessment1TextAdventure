@@ -21,7 +21,7 @@ String::String(const char* _str)
 	std::size_t _strLen = std::strlen(_str) + 1;
 
 	//2. Make str point at an array big enough to fit the text in _str
-	str = new char[_strLen + 1];
+	str = new char[_strLen];
 	//3. Copy the text from _str to str.
 	std::strncpy(str, _str, _strLen);
 }
@@ -90,24 +90,24 @@ bool String::EqualTo(const String& _other) const		//Determines if one string inp
 
 String& String::Append(const String& suffix)			//Appends (text B) onto the end of (text A).
 {														//Checks the length of (text A) and (text B), makes a new array combining the 2 lengths	
-	int newLength = (Length() + suffix.Length());		//into a new string with both strings in one array.
+	size_t newLength = (Length() + suffix.Length());		//into a new string with both strings in one array.
 	char* tempString = new char [newLength + 1];
-	std::strncpy(tempString, str, Length() + 1);
+	std::strncpy(tempString, str, Length());
 	//*(tempString + Length()) = 0;
-	std::strncat(tempString, suffix.str, suffix.Length());
-	String::~String();
+	std::strncat(tempString, suffix.str, suffix.Length() + 1);
+	delete[] this->str;
 	str = tempString;
 	return *this;
 }
 
 String& String::Prepend(const String& prefix)			//Prepends (text B) onto the front of (text A)/
 {														//Does the same thing as Append but instead places (text B) before (text A).
-	int newLength = (Length() + prefix.Length());
+	size_t newLength = (Length() + prefix.Length());
 	char* tempString = new char[newLength + 1];
-	std::strncpy(tempString, prefix.str, prefix.Length() + 1);
+	std::strncpy(tempString, prefix.str, prefix.Length());
 	//*(tempString + Length()) = 0;
-	std::strncat(tempString, str, Length());
-	String::~String();
+	std::strncat(tempString, str, Length() + 1);
+	delete[] this->str;
 	str = tempString;
 	return *this;
 }
@@ -275,7 +275,7 @@ String& String::operator=(const String& _str)			//Operator that updates (text A)
 {
 	delete[] str;
 	std::size_t _strLen = std::strlen(_str.str) + 1;
-	str = new char[_strLen + 1];
+	str = new char[_strLen];
 	std::strncpy(str, _str.str, _strLen);
 	return *this;
 }

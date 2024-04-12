@@ -8,19 +8,28 @@
 class Player
 {
 public:
+
 	Player();
+
 	~Player();
 
-	bool FindSpell(String& spell);
+	void setPlayerLocation(int _xpos, int _ypos);
 
-	Spell* CastSpell(String& spell);
+	String MovePlayer();
 
-	std::vector <Spell*> GetSpellList();
+	bool FindSpell(String spell);
 
-	void SpellList();
+	//Player location.
+	int xpos = 0;
+	int ypos = 0;
 
-	void AddSpell(Spell* spell);
+	Spell* grimoire[7];
+
+
+
 private:
-	std::vector<Spell*> spellList;
+
+
+protected:
 };
 

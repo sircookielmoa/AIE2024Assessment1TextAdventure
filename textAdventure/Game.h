@@ -1,5 +1,5 @@
 #pragma once
-#include "Map.h"
+#include "Misc.h"
 #include "Player.h"
 #include "Room.h"
 
@@ -9,16 +9,11 @@ public:
 	Game();
 	~Game();
 
-	void Run();
+	Player* mainPlayer;
+	Room* castle[3][3];
+	Item** collectionItems;
 
-	void PossibleDirections(int x, int y);
 
-	void MakeRooms();
-	Item* MakeItems();
-
-	Spell* MakeSpell();
 private:
-	Room* rooms[MAP_HEIGHT][MAP_WIDTH];
-	Player* _player;
 };
 

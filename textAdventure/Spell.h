@@ -1,21 +1,20 @@
 #pragma once
 #include "String.h"
+#include "Misc.h"
 
 class Spell
 {
 public:
 	Spell();
-	Spell(String name, int damage);
+	Spell(String name, String description, int damage);
 	~Spell();
 
-	void Cast() const;
-
-	String Getname() const;
-
-	bool Compare(Spell* a, Spell* b);
+	String name;
+	String description;
+	int damage;
 
 private:
-	String _name;
-	int _damage;
-};
 
+protected:
+
+};
